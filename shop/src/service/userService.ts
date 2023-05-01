@@ -1,4 +1,4 @@
-import { User } from "../model/user";
+import { User } from "../../model/user";
 
 export class UserService{
     private userList: User[] = [];
