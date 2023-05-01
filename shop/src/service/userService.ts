@@ -30,4 +30,13 @@ export class UserService{
         }
         return null;
     }
+
+    signUp(name : string, username : string, password : string){
+        if(this.checkUserName(username)){
+            throw new Error(`user ${username} already exists`)
+        }
+        let newUser = new User(name,username,password,10000);
+        this.add(newUser);
+    }
+    
 }

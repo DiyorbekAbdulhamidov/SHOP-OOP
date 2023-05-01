@@ -1,5 +1,7 @@
 export class User{
-    constructor(public id:number,public name : string, public username : string, public password : string,public balance : number){}
+    private id: number = 0;
+
+    constructor(public name : string, public username : string, public password : string,public balance : number){}
 
     getId(){
         return this.id;
