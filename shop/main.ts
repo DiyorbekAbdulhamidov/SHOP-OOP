@@ -4,9 +4,9 @@ import { ProductService } from "./service/productService";
 import { UserService } from "./service/userService";
 
 class Main {
-    userService = new UserService;
-    productService = new ProductService;
+    private userService = new UserService;
+    private productService = new ProductService;
 
-    
+
 
 }

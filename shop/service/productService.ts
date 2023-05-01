@@ -34,6 +34,7 @@ export class ProductService{
                         productsOfType.push(product)
                     }
                 }
+                break;
             }
 
             case "Laptop" : {
@@ -42,6 +43,7 @@ export class ProductService{
                         productsOfType.push(product)
                     }
                 }
+                break;
             }
             
             case "Phone" : {
@@ -50,6 +52,7 @@ export class ProductService{
                         productsOfType.push(product)
                     }
                 }
+                break;
             }
 
             case "Monitor" : {
@@ -58,6 +61,7 @@ export class ProductService{
                         productsOfType.push(product)
                     }
                 }
+                break;
             }
         }
         return productsOfType;
