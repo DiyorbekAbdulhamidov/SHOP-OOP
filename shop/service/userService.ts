@@ -1,8 +1,3 @@
-import { Laptop } from "../model/product/laptop";
-import { Monitor } from "../model/product/monitor";
-import { Phone } from "../model/product/phone";
-import { Product } from "../model/product/product";
-import { TV } from "../model/product/tv";
 import { User } from "../model/user";
 
 export class UserService{
