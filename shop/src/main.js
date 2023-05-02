@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Main = void 0;
-var product_1 = require("./model/product/product");
 var productService_1 = require("../src/service/productService");
 var userService_1 = require("../src/service/userService");
 var laptop_1 = require("./model/product/laptop");
@@ -9,6 +8,18 @@ var Main = /** @class */ (function () {
     function Main() {
         this.userService = new userService_1.UserService;
         this.productService = new productService_1.ProductService;
+        // crateTv(){
+        //     return new TV("Artel",20000,"http",1920,false,"amoled");
+        // }
+        // createLaptop(){
+        //     return new Laptop("LAPTOP",20000,"https",12,"coreI5","45gb","256gb");
+        // }
+        // editSingleProduct(product: Product) {
+        //     const update = new Product("TV", 120000, "drk");
+        //     if(product instanceof Laptop){
+        //         update : this.createLaptop();
+        //     }
+        // }
     }
     Main.prototype.checkAdmin = function (user) {
         return user.getUsername() === ("admin");
@@ -37,14 +48,6 @@ var Main = /** @class */ (function () {
             var product = products_1[_i];
             console.log("".concat(i++, ". ").concat(product.toString()));
         }
-    };
-    Main.prototype.editSingleProduct = function (product) {
-        var update = new product_1.Product("TV", 120000, "drk");
-        update.name = "New TV";
-        update.price = 150000;
-        update.manufacturer = "black";
-        console.log("Product: ", product);
-        console.log("Updated product: ", update);
     };
     return Main;
 }());

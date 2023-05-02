@@ -43,21 +43,22 @@ export class Main {
         }
     }
 
-    crateTv(){
-        return new TV("Artel",20000,"http",1920,false,"amoled");
-    }
+    // crateTv(){
+    //     return new TV("Artel",20000,"http",1920,false,"amoled");
+    // }
 
-    createLaptop(){
-        return new Laptop("LAPTOP",20000,"https",12,"coreI5","45gb","256gb");
-    }
+    // createLaptop(){
+    //     return new Laptop("LAPTOP",20000,"https",12,"coreI5","45gb","256gb");
+    // }
 
-    
+    // editSingleProduct(product: Product) {
+    //     const update = new Product("TV", 120000, "drk");
 
-    editSingleProduct(product: Product) {
-        const update = new Product("TV", 120000, "drk");
-
-        if(product instanceof Laptop){}        
-    }
+    //     if(product instanceof Laptop){
+    //         update : this.createLaptop();
+    //     }
+       
+    // }
 
 
 
