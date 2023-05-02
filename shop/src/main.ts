@@ -7,9 +7,9 @@ import { Monitor } from "./model/product/monitor";
 import { Phone } from "./model/product/phone";
 import { TV } from "./model/product/tv";
 
-export class Main extends ProductService{
-    private userService = new UserService;
-    private productService = new ProductService;
+export class Main {
+    private userService = new UserService();
+    private productService = new ProductService();
 
     checkAdmin(user: User) {
         return user.getUsername() === ("admin");
@@ -42,26 +42,4 @@ export class Main extends ProductService{
             console.log(`${i++}. ${product.toString()}`);
         }
     }
-
-    // crateTv(){
-    //     return new TV("Artel",20000,"http",1920,false,"amoled");
-    // }
-
-    // createLaptop(){
-    //     return new Laptop("LAPTOP",20000,"https",12,"coreI5","45gb","256gb");
-    // }
-
-    // editSingleProduct(product: Product) {
-    //     const update = new Product("TV", 120000, "drk");
-
-    //     if(product instanceof Laptop){
-    //         update : this.createLaptop();
-    //     }
-       
-    // }
-
-
-
-
-
 }
