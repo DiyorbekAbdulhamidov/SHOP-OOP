@@ -7,7 +7,7 @@ import { Monitor } from "./model/product/monitor";
 import { Phone } from "./model/product/phone";
 import { TV } from "./model/product/tv";
 
-export class Main {
+export class Main extends ProductService{
     private userService = new UserService;
     private productService = new ProductService;
 
