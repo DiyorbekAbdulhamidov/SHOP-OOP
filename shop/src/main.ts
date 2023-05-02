@@ -43,15 +43,24 @@ export class Main {
         }
     }
 
+    crateTv(){
+        return new TV("Artel",20000,"http",1920,false,"amoled");
+    }
+
+    createLaptop(){
+        return new Laptop("LAPTOP",20000,"https",12,"coreI5","45gb","256gb");
+    }
+
+    
+
     editSingleProduct(product: Product) {
         const update = new Product("TV", 120000, "drk");
 
-        update.name = "New TV";
-        update.price = 150000;
-        update.manufacturer = "black";
-
-        console.log("Product: ", product);
-        console.log("Updated product: ", update);
+        if(product instanceof Laptop){}        
     }
+
+
+
+
 
 }

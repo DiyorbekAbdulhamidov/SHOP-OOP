@@ -92,9 +92,9 @@ public class Main {
         } else if (product instanceof TV) {
             update = createTV();
         } else if (product instanceof Phone) {
-            // your code;
+            
         }else if (product instanceof Monitor) {
-            // your code;
+
         }
 
         update.setId(product.getId());
