@@ -5,10 +5,18 @@ import { Product } from "../model/product/product"
 import { TV } from "../model/product/tv"
 
 export class ProductService{
-    productList: Product[] = [];
+    private productList: Product[] = [];
     private idGenerator = 0;
     
     
+    getList(){
+        return this.productList;
+    }
+
+    setList(productList = []){
+        this.productList = productList;
+    }
+
     add(product : Product){
         product.setId(++this.idGenerator);
         this.productList.push(product);

@@ -42,4 +42,28 @@ export class Main {
             console.log(`${i++}. ${product.toString()}`);
         }
     }
+
+    addProduct(...product : Product[]){
+        for(let prod of product) {
+            this.productService.add(prod);
+        }    
+    }
+
+    getProductList(){
+        return this.productService.getList();
+    }
+
+    getUserList(){
+        return this.userService.getList();
+    }
+
+    addUserList(...user : User[]){
+        for(let userr of user) {
+            this.userService.add(userr);
+        }
+    }
+
+    showProduct(type : string){
+        return this.productService.getProductsByType(type);            
+    }
 }

@@ -13,6 +13,14 @@ export class UserService{
         return false
     }
 
+    getList(){
+        return this.userList;
+    }
+
+    setList(list:[]){
+        this.userList = list;
+    }
+
     add(user: User){
         if(this.checkUserName(user.getUsername())){
             return false

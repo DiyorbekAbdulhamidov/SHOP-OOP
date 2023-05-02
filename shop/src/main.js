@@ -6,20 +6,8 @@ var userService_1 = require("../src/service/userService");
 var laptop_1 = require("./model/product/laptop");
 var Main = /** @class */ (function () {
     function Main() {
-        this.userService = new userService_1.UserService;
-        this.productService = new productService_1.ProductService;
-        // crateTv(){
-        //     return new TV("Artel",20000,"http",1920,false,"amoled");
-        // }
-        // createLaptop(){
-        //     return new Laptop("LAPTOP",20000,"https",12,"coreI5","45gb","256gb");
-        // }
-        // editSingleProduct(product: Product) {
-        //     const update = new Product("TV", 120000, "drk");
-        //     if(product instanceof Laptop){
-        //         update : this.createLaptop();
-        //     }
-        // }
+        this.userService = new userService_1.UserService();
+        this.productService = new productService_1.ProductService();
     }
     Main.prototype.checkAdmin = function (user) {
         return user.getUsername() === ("admin");
@@ -48,6 +36,35 @@ var Main = /** @class */ (function () {
             var product = products_1[_i];
             console.log("".concat(i++, ". ").concat(product.toString()));
         }
+    };
+    Main.prototype.addProduct = function () {
+        var product = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            product[_i] = arguments[_i];
+        }
+        for (var _a = 0, product_1 = product; _a < product_1.length; _a++) {
+            var prod = product_1[_a];
+            this.productService.add(prod);
+        }
+    };
+    Main.prototype.getProductList = function () {
+        return this.productService.getList();
+    };
+    Main.prototype.getUserList = function () {
+        return this.userService.getList();
+    };
+    Main.prototype.addUserList = function () {
+        var user = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            user[_i] = arguments[_i];
+        }
+        for (var _a = 0, user_1 = user; _a < user_1.length; _a++) {
+            var userr = user_1[_a];
+            this.userService.add(userr);
+        }
+    };
+    Main.prototype.showProduct = function (type) {
+        return this.productService.getProductsByType(type);
     };
     return Main;
 }());

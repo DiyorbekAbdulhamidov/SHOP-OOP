@@ -10,6 +10,13 @@ var ProductService = /** @class */ (function () {
         this.productList = [];
         this.idGenerator = 0;
     }
+    ProductService.prototype.getList = function () {
+        return this.productList;
+    };
+    ProductService.prototype.setList = function (productList) {
+        if (productList === void 0) { productList = []; }
+        this.productList = productList;
+    };
     ProductService.prototype.add = function (product) {
         product.setId(++this.idGenerator);
         this.productList.push(product);

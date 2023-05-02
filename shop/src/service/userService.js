@@ -15,6 +15,12 @@ var UserService = /** @class */ (function () {
         }
         return false;
     };
+    UserService.prototype.getList = function () {
+        return this.userList;
+    };
+    UserService.prototype.setList = function (list) {
+        this.userList = list;
+    };
     UserService.prototype.add = function (user) {
         if (this.checkUserName(user.getUsername())) {
             return false;
