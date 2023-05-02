@@ -22,4 +22,37 @@ export class Main {
         this.productService.add(new Laptop("Dell AB4", 500, "Dell", 16, "Core i3 8Gen", "S90", "128"));
         this.productService.add(new Laptop("Lenovo", 650, "Lenovo", 24, "Core i7 8 Gen", "RTX4090", "512"));
     }
+
+    signUp(name : string, username : string, password : string) {
+        this.userService.signUp(name,username,password)
+    }
+
+    signIn(username : string, password : string) {
+        let user = this.userService.signIn(username,password);
+        if(user === null) throw new Error("User not found!");
+    }
+
+    // displayProducts(products : Product[]) {
+    //     if(products == null || products.length == 0) throw new Error({
+    //         throw new Error("No products in this category yet!");
+    //         return;
+    //     }
+
+    //     let i = 1;
+    //     for (Product product:products) {
+    //         System.out.println(i++ +". " + product.toString());
+    //     }
+    // }
+
+    displayProducts(products : Product[]) {
+        if (products == null || products.length == 0) {
+            throw new Error("No products in this category yet!");
+        }
+    
+        let i = 1;
+        for (const product of products) {
+            console.log(`${i++}. ${product.toString()}`);
+        }
+    }
+    
 }
