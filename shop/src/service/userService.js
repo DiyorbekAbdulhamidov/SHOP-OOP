@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserService = void 0;
+var user_1 = require("../model/user");
 var UserService = /** @class */ (function () {
     function UserService() {
         this.userList = [];
@@ -30,6 +31,13 @@ var UserService = /** @class */ (function () {
             }
         }
         return null;
+    };
+    UserService.prototype.signUp = function (name, username, password) {
+        if (this.checkUserName(username)) {
+            throw new Error("user ".concat(username, " already exists"));
+        }
+        var newUser = new user_1.User(name, username, password, 10000);
+        this.add(newUser);
     };
     return UserService;
 }());

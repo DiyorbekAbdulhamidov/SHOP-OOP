@@ -2,12 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
 var User = /** @class */ (function () {
-    function User(id, name, username, password, balance) {
-        this.id = id;
+    function User(name, username, password, balance) {
         this.name = name;
         this.username = username;
         this.password = password;
         this.balance = balance;
+        this.id = 0;
     }
     User.prototype.getId = function () {
         return this.id;

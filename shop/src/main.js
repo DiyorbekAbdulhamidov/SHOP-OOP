@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Main = void 0;
+var product_1 = require("./model/product/product");
 var productService_1 = require("../src/service/productService");
 var userService_1 = require("../src/service/userService");
 var laptop_1 = require("./model/product/laptop");
@@ -18,6 +19,32 @@ var Main = /** @class */ (function () {
         this.productService.add(new laptop_1.Laptop("MSI GF66", 1000, "MSI", 12, "Core i7 11 Gen", "RTX4090", "256"));
         this.productService.add(new laptop_1.Laptop("Dell AB4", 500, "Dell", 16, "Core i3 8Gen", "S90", "128"));
         this.productService.add(new laptop_1.Laptop("Lenovo", 650, "Lenovo", 24, "Core i7 8 Gen", "RTX4090", "512"));
+    };
+    Main.prototype.signUp = function (name, username, password) {
+        this.userService.signUp(name, username, password);
+    };
+    Main.prototype.signIn = function (username, password) {
+        var user = this.userService.signIn(username, password);
+        if (user === null)
+            throw new Error("User not found!");
+    };
+    Main.prototype.displayProducts = function (products) {
+        if (products == null || products.length == 0) {
+            throw new Error("No products in this category yet!");
+        }
+        var i = 1;
+        for (var _i = 0, products_1 = products; _i < products_1.length; _i++) {
+            var product = products_1[_i];
+            console.log("".concat(i++, ". ").concat(product.toString()));
+        }
+    };
+    Main.prototype.editSingleProduct = function (product) {
+        var update = new product_1.Product("TV", 120000, "drk");
+        update.name = "New TV";
+        update.price = 150000;
+        update.manufacturer = "black";
+        console.log("Product: ", product);
+        console.log("Updated product: ", update);
     };
     return Main;
 }());
